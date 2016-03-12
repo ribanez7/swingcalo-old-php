@@ -1,0 +1,19 @@
+php_value session.auto_start 1
+
+# Possem la directiva IfModule per a dir-li a l'Apache que volem executar
+# lo que hi ha dins només quan el mòdul de reescriptura de URls està
+# carregat en la memòria.
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteBase /swingcalo
+
+    RewriteRule ^$ /content/index.php
+    RewriteRule ^multimedia$ /content/multimedia.php
+    RewriteRule ^calendario$ /content/calendario.php
+    RewriteRule ^contacto$ /content/contacto.php
+    RewriteRule ^blog$ /content/blog.php
+    RewriteRule ^djangosfugue$ /content/djangosfugue.php
+
+    RewriteRule ^(.*)/(.*)$ /content/view.php?id=$2
+</IfModule>

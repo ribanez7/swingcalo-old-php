@@ -1,0 +1,6 @@
+table tbody tr td{
+    min-width: 100px;
+}
+table tbody tr td img{
+    vertical-align: top;
+}
